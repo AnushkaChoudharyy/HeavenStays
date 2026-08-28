@@ -85,22 +85,6 @@ app.delete("/listings/:id", wrapAsync(async(req,res)=>{
     res.redirect("/listings");
 }));
 
-
-// app.get("/testlisting",async (req,res)=>{
-//     let sampleListing = new Listing({
-//         title: "My new Villa",
-//         description: "By the beach",
-//         price: 1200,
-//         location:"Calangate, Goa",
-//         country:"India",
-//     });
-//     await sampleListing.save();
-//     console.log("sample was saved");
-//     res.send("successful");
-// })
-// app.use((req,res,next)=>{
-//     next( new ExpressError(404, "Page Not Found!"));
-// });
 app.all(/.*/, (req,res,next)=>{
     next( new ExpressError(404, "Page Not Found!"));
 });
